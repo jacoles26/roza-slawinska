@@ -1,6 +1,6 @@
-# Rosie Sławińska — Personal Brand Website
+# Róża Sławińska — Personal Brand Website
 
-A cinematic, warm-editorial flagship site for **Rosie Sławińska** — Warsaw-based model,
+A cinematic, warm-editorial flagship site for **Róża Sławińska** — Warsaw-based model,
 runner and traveller. Built to put in an Instagram bio and grow a brand from.
 
 Pages: **Home · About · Portfolio · Journal · Representation · Contact**.
@@ -40,7 +40,7 @@ after the slug (e.g. `portrait-overlook.jpg`) into `public/images/` and refresh.
 
 - **Booking email** — set `site.email` in `src/data/site.ts` (currently hidden until provided).
 - **Vital stats** — fill the `—` placeholders in `stats` (`src/data/site.ts`).
-- **Domain** — point e.g. `rosieslawinska.com` at the deploy.
+- **Domain** — point e.g. `rozaslawinska.com` at the deploy.
 
 ## Deploy
 

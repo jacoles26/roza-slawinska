@@ -1,14 +1,14 @@
 /**
- * Single source of truth for Rosie's public-facing content.
+ * Single source of truth for Róża's public-facing content.
  * Edit values here — nothing in the components is hard-coded.
  */
 
 export const site = {
-  name: "Rosie Sławińska",
-  fullName: "Rosie Alicja Sławińska",
-  firstName: "Rosie",
+  name: "Róża Sławińska",
+  fullName: "Róża Alicja Sławińska",
+  firstName: "Róża",
   // Used as the giant split display name in the hero
-  nameLines: ["Rosie", "Sławińska"],
+  nameLines: ["Róża", "Sławińska"],
   location: "Warsaw, Poland",
   roles: ["Model", "Runner", "Traveller", "Aesthete"],
   tagline: "A life built around constant improvement.",
@@ -25,9 +25,9 @@ export const site = {
 
   // SEO
   seo: {
-    title: "Rosie Sławińska — Model · Runner · Traveller",
+    title: "Róża Sławińska — Model · Runner · Traveller",
     description:
-      "The personal portfolio of Rosie Sławińska — Warsaw-based model represented " +
+      "The personal portfolio of Róża Sławińska — Warsaw-based model represented " +
       "by Model Plus Warsaw and Trend Models Management. Modeling, travel, running, " +
       "culture and a life built around constant improvement.",
     image: "/images/portrait-overlook.jpg",
@@ -66,7 +66,7 @@ export const partnerships = [
 ];
 
 /**
- * Vital statistics. Values left as "—" are placeholders for Rosie to fill in.
+ * Vital statistics. Values left as "—" are placeholders for Róża to fill in.
  * (Standard model-card fields; remove any line that shouldn't be public.)
  */
 export const stats: { label: string; value: string }[] = [

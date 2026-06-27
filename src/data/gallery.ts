@@ -17,13 +17,13 @@ export interface GalleryItem {
 }
 
 export const gallery: GalleryItem[] = [
-  { slug: "portrait-overlook", alt: "Rosie at a harbour overlook in Monaco", category: "editorial", feature: true },
-  { slug: "editorial-garden", alt: "Rosie in white tailoring among garden greenery", category: "editorial" },
-  { slug: "street-style", alt: "Rosie in head-to-toe neutral tailoring on a city street", category: "lifestyle" },
-  { slug: "coastal-path", alt: "Rosie on a Mediterranean coastal path in white", category: "travel", feature: true },
-  { slug: "running-mountains", alt: "Rosie running along a coastal mountain ridge", category: "movement" },
-  { slug: "viewpoint", alt: "Rosie at a Côte d'Azur viewpoint above the sea", category: "travel" },
-  { slug: "portrait-car", alt: "Candid portrait of Rosie in soft daylight", category: "editorial" },
+  { slug: "portrait-overlook", alt: "Róża at a harbour overlook in Monaco", category: "editorial", feature: true },
+  { slug: "editorial-garden", alt: "Róża in white tailoring among garden greenery", category: "editorial" },
+  { slug: "street-style", alt: "Róża in head-to-toe neutral tailoring on a city street", category: "lifestyle" },
+  { slug: "coastal-path", alt: "Róża on a Mediterranean coastal path in white", category: "travel", feature: true },
+  { slug: "running-mountains", alt: "Róża running along a coastal mountain ridge", category: "movement" },
+  { slug: "viewpoint", alt: "Róża at a Côte d'Azur viewpoint above the sea", category: "travel" },
+  { slug: "portrait-car", alt: "Candid portrait of Róża in soft daylight", category: "editorial" },
   { slug: "sea-dive", alt: "Diving into open water off the rocks", category: "movement", feature: true },
   { slug: "clifftop", alt: "On a clifftop above the Mediterranean", category: "travel" },
   { slug: "coffee-hat", alt: "A slow morning — coffee and a sun hat in the city", category: "lifestyle" },

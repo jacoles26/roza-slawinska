@@ -101,7 +101,7 @@ export default function Home() {
       <section className="container-editorial py-12 md:py-24">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-20">
           <Reveal className="relative aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep">
-            <Picture slug="portrait-overlook" alt="Portrait of Rosie" className="h-full w-full" />
+            <Picture slug="portrait-overlook" alt="Portrait of Róża" className="h-full w-full" />
           </Reveal>
           <div className="flex flex-col gap-6">
             <SectionHeading

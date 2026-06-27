@@ -5,7 +5,7 @@ Every photo on the site is referenced by a **slug**. For each slug there are two
 - `<slug>.webp` — modern, smaller (shown to most browsers)
 - `<slug>.jpg` — fallback (older browsers + social-share previews)
 
-## To replace a photo with one of Rosie's own
+## To replace a photo with one of Róża's own
 
 1. Export the new photo (any orientation is fine).
 2. Name it exactly like the slug you're replacing, e.g. `portrait-overlook.jpg`.

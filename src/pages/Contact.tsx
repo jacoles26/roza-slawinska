@@ -11,7 +11,7 @@ export default function Contact() {
     <PageTransition>
       <Seo
         title="Contact"
-        description="Get in touch with Rosie Sławińska for modeling bookings, brand collaborations and press."
+        description="Get in touch with Róża Sławińska for modeling bookings, brand collaborations and press."
       />
       <PageHeader
         eyebrow="Contact"
@@ -26,7 +26,7 @@ export default function Contact() {
 
         <div className="flex flex-col gap-8">
           <Reveal className="relative aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep">
-            <Picture slug="portrait-car" alt="Portrait of Rosie" className="h-full w-full" />
+            <Picture slug="portrait-car" alt="Portrait of Róża" className="h-full w-full" />
           </Reveal>
 
           <Reveal delay={0.05} className="flex flex-col gap-5 rounded-squircle border border-ink/10 bg-cream p-8">

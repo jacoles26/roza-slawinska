@@ -45,7 +45,7 @@ export default function Nav() {
             className="font-display text-lg italic tracking-tight text-ink"
             aria-label={`${site.name} — home`}
           >
-            Rosie<span className="text-clay">.</span>
+            Róża<span className="text-clay">.</span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">

@@ -1,9 +1,9 @@
 {
-  "name": "rosie-slawinska",
+  "name": "roza-slawinska",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Personal brand website for Rosie Sławińska — model, runner, traveller.",
+  "description": "Personal brand website for Róża Sławińska — model, runner, traveller.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

@@ -12,7 +12,7 @@ export default function Journal() {
     <PageTransition>
       <Seo
         title="Journal"
-        description="Movement, travel, culture and style — the world behind Rosie Sławińska's work."
+        description="Movement, travel, culture and style — the world behind Róża Sławińska's work."
       />
       <PageHeader
         eyebrow="Journal"

@@ -41,7 +41,7 @@ export default function ContactForm() {
       >
         <span className="font-display text-3xl italic text-ink">Thank you.</span>
         <p className="max-w-sm text-ink-soft">
-          Your message is on its way. Rosie will be in touch soon — for anything time-sensitive,
+          Your message is on its way. Róża will be in touch soon — for anything time-sensitive,
           a DM on Instagram is the fastest route.
         </p>
       </motion.div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Tell Rosie a little about the project…"
+          placeholder="Tell Róża a little about the project…"
           className="resize-none rounded-2xl border border-ink/15 bg-cream px-5 py-4 text-ink outline-none transition-all duration-300 placeholder:text-taupe-light focus:border-ink/40 focus:shadow-soft"
         />
       </label>

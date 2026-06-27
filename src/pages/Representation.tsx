@@ -11,7 +11,7 @@ export default function Representation() {
     <PageTransition>
       <Seo
         title="Representation"
-        description="Rosie Sławińska is represented by Model Plus Warsaw and Trend Models Management, and is a brand ambassador for PwC Polska."
+        description="Róża Sławińska is represented by Model Plus Warsaw and Trend Models Management, and is a brand ambassador for PwC Polska."
       />
       <PageHeader
         eyebrow="Representation"
@@ -26,7 +26,7 @@ export default function Representation() {
       {/* Editorial image band */}
       <section className="container-editorial grid items-center gap-10 py-16 md:grid-cols-2 md:gap-20">
         <Reveal className="relative aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep">
-          <Picture slug="street-style" alt="Rosie street style" className="h-full w-full" />
+          <Picture slug="street-style" alt="Róża street style" className="h-full w-full" />
         </Reveal>
         <div className="flex flex-col gap-6">
           <Reveal>

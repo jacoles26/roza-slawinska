@@ -20,7 +20,7 @@ export default function Portfolio() {
     <PageTransition>
       <Seo
         title="Portfolio"
-        description="The portfolio of Rosie Sławińska — editorial, travel, movement and lifestyle imagery."
+        description="The portfolio of Róża Sławińska — editorial, travel, movement and lifestyle imagery."
       />
       <PageHeader
         eyebrow="Portfolio"

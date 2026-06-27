@@ -1,6 +1,6 @@
 /**
  * Lifestyle / Journal entries — the brand engine.
- * Rosie can add, edit or reorder these freely. Each `image` is a slug in
+ * Róża can add, edit or reorder these freely. Each `image` is a slug in
  * /public/images, each optional `video` is a slug in /public/video.
  */
 

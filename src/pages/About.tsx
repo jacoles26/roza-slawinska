@@ -31,7 +31,7 @@ export default function About() {
     <PageTransition>
       <Seo
         title="About"
-        description="Rosie Sławińska — Warsaw-born model and recent graduate building a life around movement, craft and constant improvement."
+        description="Róża Sławińska — Warsaw-born model and recent graduate building a life around movement, craft and constant improvement."
       />
       <PageHeader
         eyebrow="About"
@@ -42,12 +42,12 @@ export default function About() {
       {/* Portrait + opening narrative */}
       <section className="container-editorial grid items-start gap-10 pb-24 md:grid-cols-[1.1fr_1fr] md:gap-20">
         <Reveal className="relative aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep">
-          <Picture slug="editorial-garden" alt="Rosie in white tailoring" className="h-full w-full" loading="eager" />
+          <Picture slug="editorial-garden" alt="Róża in white tailoring" className="h-full w-full" loading="eager" />
         </Reveal>
         <div className="flex flex-col gap-6 md:pt-8">
           <Reveal>
             <p className="font-display text-2xl leading-snug text-ink md:text-3xl">
-              I'm Rosie — born and raised in Warsaw, recently graduated, and happiest somewhere
+              I'm Róża — born and raised in Warsaw, recently graduated, and happiest somewhere
               between a set, a start line, and a departures board.
             </p>
           </Reveal>
