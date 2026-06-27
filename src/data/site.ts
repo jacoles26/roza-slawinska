@@ -20,8 +20,8 @@ export const site = {
   // Primary contact channels
   instagram: "https://www.instagram.com/r.slawinskaa",
   instagramHandle: "@r.slawinskaa",
-  // TODO: set Rosie's public booking email here, or leave empty to hide it.
-  email: "",
+  // Public booking email (shows the email CTA on the Contact page).
+  email: "slawinskarozaa@gmail.com",
 
   // SEO
   seo: {
