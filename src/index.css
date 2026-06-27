@@ -1,0 +1,117 @@
+@import "@fontsource-variable/fraunces/index.css";
+@import "@fontsource-variable/plus-jakarta-sans/index.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-clay text-cream;
+  }
+
+  /* Refined, thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme("colors.paper-deep");
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.taupe-light");
+    border-radius: 999px;
+    border: 3px solid theme("colors.paper-deep");
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Microscopic eyebrow label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] uppercase tracking-label text-taupe font-medium;
+  }
+
+  /* Editorial container */
+  .container-editorial {
+    @apply mx-auto w-full max-w-editorial px-6 md:px-10;
+  }
+
+  /* Fluid display heading scale */
+  .display-xl {
+    font-size: clamp(3rem, 11vw, 9.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+  }
+  .display-lg {
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.015em;
+  }
+  .display-md {
+    font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+
+  /* Island button — pill with nested icon */
+  .btn-island {
+    @apply inline-flex items-center gap-3 rounded-full bg-ink py-3 pl-6 pr-3 text-sm
+           font-medium text-cream transition-all duration-500 ease-editorial
+           hover:shadow-lift active:scale-[0.98];
+  }
+  .btn-island-icon {
+    @apply flex h-8 w-8 items-center justify-center rounded-full bg-cream/15
+           transition-transform duration-500 ease-editorial;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-3 rounded-full border border-ink/15 py-3 pl-6 pr-3
+           text-sm font-medium text-ink transition-all duration-500 ease-editorial
+           hover:border-ink/40 active:scale-[0.98];
+  }
+  /* Nested-icon kinetic tension on parent hover (no group utility needed) */
+  .btn-island:hover .btn-island-icon,
+  .btn-ghost:hover .btn-island-icon {
+    transform: translate(0.25rem, -1px) scale(1.05);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .grain-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Honour reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
