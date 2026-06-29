@@ -5,28 +5,40 @@ import PageHeader from "../components/PageHeader";
 import GalleryGrid from "../components/GalleryGrid";
 import Lightbox from "../components/Lightbox";
 import { cn } from "../lib/cn";
-import { gallery, categories, type GalleryCategory } from "../data/gallery";
+import { useContent } from "../i18n/useContent";
+import {
+  galleryItems,
+  categoryOrder,
+  type GalleryCategory,
+  type GalleryItem,
+} from "../data/shared";
 
 export default function Portfolio() {
+  const { content } = useContent();
+  const { portfolio } = content;
   const [filter, setFilter] = useState<GalleryCategory | "all">("all");
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const items = useMemo(
-    () => (filter === "all" ? gallery : gallery.filter((g) => g.category === filter)),
-    [filter]
+  // Merge structural gallery data with the active locale's alt text.
+  const localized: GalleryItem[] = useMemo(
+    () => galleryItems.map((g) => ({ ...g, alt: portfolio.alt[g.slug] ?? content.name })),
+    [portfolio.alt, content.name]
   );
+
+  const items = useMemo(
+    () => (filter === "all" ? localized : localized.filter((g) => g.category === filter)),
+    [filter, localized]
+  );
+
+  const categories = categoryOrder.map((key) => ({
+    key,
+    label: key === "all" ? portfolio.categories.all : portfolio.categories[key],
+  }));
 
   return (
     <PageTransition>
-      <Seo
-        title="Portfolio"
-        description="The portfolio of Róża Sławińska — editorial, travel, movement and lifestyle imagery."
-      />
-      <PageHeader
-        eyebrow="Portfolio"
-        title={<>A gallery in <span className="italic">motion</span></>}
-        intro="Editorial, travel and movement. A living archive that grows with every shoot — tap any frame to view it full-size."
-      />
+      <Seo title={content.seo.portfolio.title} description={content.seo.portfolio.description} />
+      <PageHeader eyebrow={portfolio.eyebrow} title={portfolio.title} intro={portfolio.intro} />
 
       {/* Filters */}
       <div className="container-editorial sticky top-20 z-30 mb-10 flex flex-wrap gap-2">

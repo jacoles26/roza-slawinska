@@ -4,16 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm editorial palette — paper, ink, taupe, dusty terracotta accent
-        paper: "#F7F3EC",
-        "paper-deep": "#EFE8DC",
-        cream: "#FDFBF7",
-        ink: "#1C1812",
-        "ink-soft": "#3A332A",
-        taupe: "#8C8170",
-        "taupe-light": "#B6AC9C",
-        clay: "#B5654A", // dusty terracotta accent
-        "clay-soft": "#C98A72",
+        // Clarity palette — crisp near-white paper, deep ink, refined red primary,
+        // deep-blue secondary accent. (`clay` is kept as the accent token name so
+        // every existing accent picks up the new red automatically.)
+        paper: "#FAF8F4",
+        "paper-deep": "#F0EBE2",
+        cream: "#FFFFFF",
+        ink: "#17140F",
+        "ink-soft": "#3C362C",
+        taupe: "#857E70",
+        "taupe-light": "#B4AB9B",
+        clay: "#B11E2F", // refined red — primary accent
+        "clay-soft": "#D14B57",
+        azure: "#1F3D63", // deep blue — subtle secondary accent
+        "azure-soft": "#3E6B9E",
         sage: "#7C8270",
       },
       fontFamily: {

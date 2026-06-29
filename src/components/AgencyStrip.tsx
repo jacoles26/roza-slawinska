@@ -1,10 +1,14 @@
-import { agencies, partnerships } from "../data/site";
+import { useContent } from "../i18n/useContent";
 import Reveal from "./Reveal";
 
 /** Representation + partnerships, set as a refined credibility block. */
 export default function AgencyStrip() {
+  const { content } = useContent();
+  const { agencies, partnerships, visit, directEnquiries, selectedPartnership } =
+    content.representation;
+
   return (
-    <div className="grid gap-px overflow-hidden rounded-squircle border border-ink/10 bg-ink/10 md:grid-cols-3">
+    <div className="grid gap-px overflow-hidden rounded-squircle border border-ink/10 bg-ink/10 md:grid-cols-2 lg:grid-cols-4">
       {agencies.map((a, i) => (
         <Reveal key={a.name} delay={i * 0.08} className="bg-paper">
           <div className="flex h-full flex-col justify-between gap-8 p-8 md:p-10">
@@ -20,24 +24,24 @@ export default function AgencyStrip() {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-2 text-sm text-ink-soft transition-colors hover:text-clay"
               >
-                Visit
+                {visit}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
             ) : (
-              <span className="text-sm text-taupe-light">Direct enquiries via contact</span>
+              <span className="text-sm text-taupe-light">{directEnquiries}</span>
             )}
           </div>
         </Reveal>
       ))}
 
       {partnerships.map((p) => (
-        <Reveal key={p.name} className="bg-ink text-cream md:col-span-3">
+        <Reveal key={p.name} className="bg-ink text-cream md:col-span-2 lg:col-span-4">
           <div className="flex flex-col items-start justify-between gap-4 p-8 sm:flex-row sm:items-center md:p-10">
             <div className="flex flex-col gap-1">
               <span className="eyebrow text-cream/50">{p.role}</span>
               <p className="font-display text-2xl italic">{p.name}</p>
             </div>
-            <span className="text-sm text-cream/60">Selected partnership</span>
+            <span className="text-sm text-cream/60">{selectedPartnership}</span>
           </div>
         </Reveal>
       ))}

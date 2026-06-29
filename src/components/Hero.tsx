@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { site } from "../data/site";
+import { useContent } from "../i18n/useContent";
+import { HERO_VIDEO } from "../data/shared";
 import { easeEditorial } from "../lib/motion";
 
-const HERO_VIDEO = "village-walk"; // /public/video/<slug>.mp4 + <slug>-poster.jpg
-
 export default function Hero() {
+  const { content, localePath } = useContent();
+  const { location, nameLines, keywords, hero } = content;
+
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,7 +35,7 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* Warm editorial wash for legibility */}
+      {/* Editorial wash for legibility */}
       <motion.div
         style={{ opacity: overlayOpacity }}
         className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-ink/40"
@@ -42,8 +44,10 @@ export default function Hero() {
 
       {/* Top meta row */}
       <div className="container-editorial absolute inset-x-0 top-24 z-10 flex items-center justify-between text-cream/70 md:top-28">
-        <span className="eyebrow text-cream/70">{site.location}</span>
-        <span className="eyebrow text-cream/70">Portfolio — {new Date().getFullYear()}</span>
+        <span className="eyebrow text-cream/70">{location}</span>
+        <span className="eyebrow text-cream/70">
+          {hero.portfolioLabel} — {new Date().getFullYear()}
+        </span>
       </div>
 
       {/* Headline */}
@@ -53,7 +57,7 @@ export default function Hero() {
       >
         <div className="flex flex-col gap-6">
           <h1 className="display-xl text-cream">
-            {site.nameLines.map((line, i) => (
+            {nameLines.map((line, i) => (
               <motion.span
                 key={line}
                 className="block"
@@ -61,11 +65,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + i * 0.12, duration: 1, ease: easeEditorial }}
               >
-                {i === 1 ? (
-                  <span className="italic font-light">{line}</span>
-                ) : (
-                  line
-                )}
+                {i === 1 ? <span className="italic font-light">{line}</span> : line}
               </motion.span>
             ))}
           </h1>
@@ -76,21 +76,21 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.9, ease: easeEditorial }}
             className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
           >
-            <p className="max-w-md text-sm leading-relaxed text-cream/80 md:text-base">
-              {site.tagline} {site.roles.join(" · ")}.
+            <p className="max-w-md text-sm uppercase tracking-label text-cream/80 md:text-[13px]">
+              {keywords.join(" · ")}
             </p>
             <div className="flex flex-wrap items-center gap-3">
-              <Link to="/portfolio" className="btn-island bg-cream text-ink">
-                View portfolio
+              <Link to={localePath("/portfolio")} className="btn-island bg-cream text-ink">
+                {hero.viewPortfolio}
                 <span className="btn-island-icon bg-ink/10">
                   <Arrow />
                 </span>
               </Link>
               <Link
-                to="/about"
+                to={localePath("/about")}
                 className="btn-ghost border-cream/30 text-cream hover:border-cream/70"
               >
-                The story
+                {hero.theStory}
                 <span className="btn-island-icon bg-cream/10">
                   <Arrow />
                 </span>
