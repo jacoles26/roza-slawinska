@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import type { GalleryItem } from "../data/gallery";
+import type { GalleryItem } from "../data/shared";
 import { easeEditorial } from "../lib/motion";
 import Picture from "./Picture";
 

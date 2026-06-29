@@ -7,38 +7,67 @@ import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
 import Picture from "../components/Picture";
 import AgencyStrip from "../components/AgencyStrip";
-import { site } from "../data/site";
-import { gallery } from "../data/gallery";
-import { journal } from "../data/journal";
+import { useContent } from "../i18n/useContent";
+import { galleryItems, journalImage } from "../data/shared";
 
 export default function Home() {
-  const featured = gallery.filter((g) => g.feature).slice(0, 4);
+  const { content, localePath } = useContent();
+  const { home, instagram, instagramHandle, journal, portfolio, quotes } = content;
+
+  const featured = galleryItems.filter((g) => g.feature).slice(0, 4);
+  const journalTeasers = journal.entries.slice(0, 6);
+  const beliefs = quotes.slice(0, 3);
 
   return (
     <PageTransition>
-      <Seo />
+      <Seo title={content.seo.home.title} description={content.seo.home.description} />
       <Hero />
 
-      {/* Manifesto */}
+      {/* The heart — the value Róża brings to others */}
+      <section className="relative overflow-hidden bg-ink text-cream">
+        <div className="container-editorial grid gap-12 py-24 md:grid-cols-[1fr_1.1fr] md:items-center md:py-36">
+          <Reveal>
+            <span className="eyebrow text-azure-soft">
+              <span className="h-px w-8 bg-azure-soft" />
+              {home.valueEyebrow}
+            </span>
+            <h2 className="mt-8 font-display text-4xl leading-[1.08] md:text-6xl">
+              {home.valueTitle}
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08} className="flex flex-col gap-8">
+            <p className="text-lg leading-relaxed text-cream/75">{home.valueBody}</p>
+            <blockquote className="border-l-2 border-clay pl-6 font-display text-2xl italic leading-snug text-cream md:text-3xl">
+              “{home.valueQuote}”
+            </blockquote>
+            <Link to={localePath("/journal")} className="btn-island w-fit bg-cream text-ink">
+              {home.valueButton}
+              <span className="btn-island-icon bg-ink/10">
+                <ArrowIcon />
+              </span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Short version */}
       <section className="container-editorial py-24 md:py-36">
         <Reveal>
           <span className="eyebrow">
-            <span className="h-px w-8 bg-taupe-light" />
-            The short version
+            <span className="h-px w-8 bg-clay" />
+            {home.shortEyebrow}
           </span>
         </Reveal>
         <Reveal delay={0.05}>
           <p className="mt-8 max-w-5xl font-display text-3xl leading-[1.15] text-ink md:text-5xl md:leading-[1.1]">
-            From <span className="italic text-clay">Warsaw</span> to wherever the work takes me —
-            a model and recent graduate building a life around movement, craft, and the small
-            disciplines that <span className="italic">compound</span>.
+            {home.shortTitle}
           </p>
         </Reveal>
         <Reveal delay={0.1}>
           <div className="mt-10 max-w-xl">
-            <p className="text-base leading-relaxed text-ink-soft md:text-lg">{site.intro}</p>
-            <Link to="/about" className="mt-8 btn-ghost">
-              Read the full story
+            <p className="text-base leading-relaxed text-ink-soft md:text-lg">{content.intro}</p>
+            <Link to={localePath("/about")} className="mt-8 btn-ghost">
+              {home.shortButton}
               <span className="btn-island-icon bg-ink/5">
                 <ArrowIcon />
               </span>
@@ -50,7 +79,7 @@ export default function Home() {
       {/* Marquee band */}
       <section className="border-y border-ink/10 bg-paper-deep py-6">
         <Marquee
-          items={[...site.roles, "Optimising the everyday", "Warsaw"]}
+          items={home.marquee}
           className="font-display text-2xl italic text-ink/70 md:text-4xl"
         />
       </section>
@@ -60,13 +89,13 @@ export default function Home() {
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
             index="01"
-            eyebrow="Selected work"
-            title={<>A portfolio in <span className="italic">motion</span></>}
-            intro="Editorial, travel and movement — a living gallery that grows with every shoot."
+            eyebrow={home.workEyebrow}
+            title={home.workTitle}
+            intro={home.workIntro}
           />
           <Reveal>
-            <Link to="/portfolio" className="btn-island shrink-0">
-              View all
+            <Link to={localePath("/portfolio")} className="btn-island shrink-0">
+              {home.workButton}
               <span className="btn-island-icon">
                 <ArrowIcon />
               </span>
@@ -82,12 +111,12 @@ export default function Home() {
               className={i % 2 === 0 ? "md:mt-0" : "md:mt-12"}
             >
               <Link
-                to="/portfolio"
+                to={localePath("/portfolio")}
                 className="group block aspect-[3/4] overflow-hidden rounded-lg bg-paper-deep"
               >
                 <Picture
                   slug={item.slug}
-                  alt={item.alt}
+                  alt={portfolio.alt[item.slug] ?? content.name}
                   className="block h-full w-full"
                   imgClassName="h-full w-full transition-transform duration-[1.4s] ease-editorial group-hover:scale-105"
                 />
@@ -97,25 +126,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About split */}
+      {/* Who I am split */}
       <section className="container-editorial py-12 md:py-24">
         <div className="grid items-center gap-10 md:grid-cols-2 md:gap-20">
           <Reveal className="relative aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep">
-            <Picture slug="portrait-overlook" alt="Portrait of Róża" className="h-full w-full" />
+            <Picture slug="portrait-overlook" alt={content.name} className="h-full w-full" />
           </Reveal>
           <div className="flex flex-col gap-6">
-            <SectionHeading
-              index="02"
-              eyebrow="Who I am"
-              title={<>Curious, disciplined, <span className="italic">always moving</span></>}
-            />
+            <SectionHeading index="02" eyebrow={home.whoEyebrow} title={home.whoTitle} />
             <p className="max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
-              I split my time between sets, the road, and the next departure gate. Running in the
-              morning, learning something new by the afternoon, dressing for the life I'm building.
+              {home.whoBody}
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/about" className="btn-island">
-                More about me
+              <Link to={localePath("/about")} className="btn-island">
+                {home.whoButton}
                 <span className="btn-island-icon">
                   <ArrowIcon />
                 </span>
@@ -129,19 +153,19 @@ export default function Home() {
       <section className="container-editorial py-24 md:py-36">
         <SectionHeading
           index="03"
-          eyebrow="The journal"
-          title={<>The life behind the <span className="italic">lens</span></>}
-          intro="Movement, travel, culture, style — the world that feeds the work."
+          eyebrow={home.journalEyebrow}
+          title={home.journalTitle}
+          intro={home.journalIntro}
         />
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {journal.slice(0, 6).map((entry, i) => (
+          {journalTeasers.map((entry, i) => (
             <Reveal key={entry.id} delay={(i % 3) * 0.08}>
               <Link
-                to="/journal"
+                to={localePath("/journal")}
                 className="group relative block aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep"
               >
                 <Picture
-                  slug={entry.image}
+                  slug={journalImage(entry.id)}
                   alt={entry.title}
                   className="h-full w-full"
                   imgClassName="h-full w-full transition-transform duration-[1.4s] ease-editorial group-hover:scale-105"
@@ -159,41 +183,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* In her words — quotes */}
+      <section className="container-editorial py-12 md:py-24">
+        <SectionHeading eyebrow={home.quotesEyebrow} title={home.quotesTitle} className="mb-12" />
+        <div className="grid gap-px overflow-hidden rounded-squircle border border-ink/10 bg-ink/10 md:grid-cols-3">
+          {beliefs.map((quote, i) => (
+            <Reveal key={i} delay={i * 0.08} className="bg-paper">
+              <figure className="flex h-full flex-col gap-5 p-8 md:p-10">
+                <span className="font-display text-4xl italic leading-none text-clay">”</span>
+                <blockquote className="font-display text-xl leading-snug text-ink md:text-2xl">
+                  {quote}
+                </blockquote>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Representation */}
       <section className="container-editorial py-12 md:py-24">
-        <SectionHeading
-          index="04"
-          eyebrow="Representation"
-          title={<>Represented <span className="italic">worldwide</span></>}
-          className="mb-12"
-        />
+        <SectionHeading index="04" eyebrow={home.repEyebrow} title={home.repTitle} className="mb-12" />
         <AgencyStrip />
       </section>
 
       {/* Contact CTA */}
       <section className="container-editorial py-24 md:py-36">
         <Reveal className="relative overflow-hidden rounded-squircle bg-ink px-8 py-20 text-center text-cream md:px-16 md:py-28">
-          <span className="eyebrow text-cream/50">Let's work together</span>
+          <span className="eyebrow text-cream/50">{home.ctaEyebrow}</span>
           <h2 className="mx-auto mt-6 max-w-3xl font-display text-4xl leading-tight md:text-6xl">
-            Bookings, collaborations & <span className="italic">good ideas</span>.
+            {home.ctaTitle}
           </h2>
-          <p className="mx-auto mt-6 max-w-md text-cream/70">
-            For modeling enquiries, brand partnerships or press — I'd love to hear from you.
-          </p>
+          <p className="mx-auto mt-6 max-w-md text-cream/70">{home.ctaBody}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link to="/contact" className="btn-island bg-cream text-ink">
-              Get in touch
+            <Link to={localePath("/contact")} className="btn-island bg-cream text-ink">
+              {home.ctaButton}
               <span className="btn-island-icon bg-ink/10">
                 <ArrowIcon />
               </span>
             </Link>
             <a
-              href={site.instagram}
+              href={instagram}
               target="_blank"
               rel="noreferrer"
               className="btn-ghost border-cream/30 text-cream hover:border-cream/70"
             >
-              {site.instagramHandle}
+              {instagramHandle}
               <span className="btn-island-icon bg-cream/10">
                 <ArrowIcon />
               </span>

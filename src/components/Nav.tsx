@@ -1,14 +1,41 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { navLinks, site } from "../data/site";
+import { useContent } from "../i18n/useContent";
+import { LOCALES, LOCALE_LABELS } from "../i18n/locales";
 import { easeEditorial } from "../lib/motion";
 import { cn } from "../lib/cn";
+
+/** PL / EN / ES switcher — links to the current page in each language. */
+function LanguageSwitcher({ className }: { className?: string }) {
+  const { locale, localeHref } = useContent();
+  return (
+    <div className={cn("flex items-center gap-1 text-xs", className)}>
+      {LOCALES.map((l, i) => (
+        <span key={l} className="flex items-center gap-1">
+          {i > 0 && <span className="text-ink/20">/</span>}
+          <Link
+            to={localeHref(l)}
+            aria-current={l === locale ? "true" : undefined}
+            className={cn(
+              "uppercase tracking-label transition-colors",
+              l === locale ? "text-clay" : "text-ink-soft hover:text-ink"
+            )}
+          >
+            {LOCALE_LABELS[l]}
+          </Link>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { content, localePath } = useContent();
+  const { instagram, instagramHandle, name, nav } = content;
 
   // Solidify the pill after a little scroll
   useEffect(() => {
@@ -41,18 +68,18 @@ export default function Nav() {
           )}
         >
           <Link
-            to="/"
+            to={localePath("/")}
             className="font-display text-lg italic tracking-tight text-ink"
-            aria-label={`${site.name} — home`}
+            aria-label={`${name} — home`}
           >
             Róża<span className="text-clay">.</span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
-            {navLinks.map((l) => (
+            {nav.map((l) => (
               <NavLink
                 key={l.to}
-                to={l.to}
+                to={localePath(l.to)}
                 end={l.to === "/"}
                 className={({ isActive }) =>
                   cn(
@@ -77,14 +104,15 @@ export default function Nav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher className="hidden sm:flex" />
             <a
-              href={site.instagram}
+              href={instagram}
               target="_blank"
               rel="noreferrer"
-              className="hidden text-sm text-ink-soft transition-colors hover:text-ink sm:block"
+              className="hidden text-sm text-ink-soft transition-colors hover:text-ink lg:block"
             >
-              {site.instagramHandle}
+              {instagramHandle}
             </a>
             <button
               type="button"
@@ -122,7 +150,7 @@ export default function Nav() {
             className="fixed inset-0 z-40 flex flex-col justify-center bg-paper/90 px-8 backdrop-blur-2xl md:hidden"
           >
             <nav className="flex flex-col gap-2">
-              {navLinks.map((l, i) => (
+              {nav.map((l, i) => (
                 <motion.div
                   key={l.to}
                   initial={{ opacity: 0, y: 24 }}
@@ -131,7 +159,7 @@ export default function Nav() {
                   transition={{ delay: 0.08 + i * 0.06, duration: 0.6, ease: easeEditorial }}
                 >
                   <NavLink
-                    to={l.to}
+                    to={localePath(l.to)}
                     end={l.to === "/"}
                     className="font-display text-5xl text-ink"
                   >
@@ -140,17 +168,17 @@ export default function Nav() {
                 </motion.div>
               ))}
             </nav>
-            <motion.a
-              href={site.instagram}
-              target="_blank"
-              rel="noreferrer"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-12 eyebrow"
-            >
-              {site.instagramHandle}
-            </motion.a>
+            <div className="mt-12 flex items-center gap-6">
+              <LanguageSwitcher />
+              <a
+                href={instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="eyebrow"
+              >
+                {instagramHandle}
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

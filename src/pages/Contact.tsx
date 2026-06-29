@@ -4,20 +4,17 @@ import PageHeader from "../components/PageHeader";
 import ContactForm from "../components/ContactForm";
 import Reveal from "../components/Reveal";
 import Picture from "../components/Picture";
-import { site, agencies } from "../data/site";
+import { useContent } from "../i18n/useContent";
 
 export default function Contact() {
+  const { content } = useContent();
+  const { contact, instagram, instagramHandle, email } = content;
+  const agencies = content.representation.agencies;
+
   return (
     <PageTransition>
-      <Seo
-        title="Contact"
-        description="Get in touch with Róża Sławińska for modeling bookings, brand collaborations and press."
-      />
-      <PageHeader
-        eyebrow="Contact"
-        title={<>Let's <span className="italic">talk</span></>}
-        intro="Bookings, collaborations, press or a simple hello — fill in the form and I'll get back to you. For anything urgent, a DM on Instagram is fastest."
-      />
+      <Seo title={content.seo.contact.title} description={content.seo.contact.description} />
+      <PageHeader eyebrow={contact.eyebrow} title={contact.title} intro={contact.intro} />
 
       <section className="container-editorial grid gap-12 pb-24 md:grid-cols-[1.2fr_1fr] md:gap-20">
         <Reveal>
@@ -26,27 +23,27 @@ export default function Contact() {
 
         <div className="flex flex-col gap-8">
           <Reveal className="relative aspect-[4/5] overflow-hidden rounded-squircle bg-paper-deep">
-            <Picture slug="portrait-car" alt="Portrait of Róża" className="h-full w-full" />
+            <Picture slug="portrait-car" alt={content.name} className="h-full w-full" />
           </Reveal>
 
           <Reveal delay={0.05} className="flex flex-col gap-5 rounded-squircle border border-ink/10 bg-cream p-8">
-            <span className="eyebrow">Direct</span>
+            <span className="eyebrow">{contact.directLabel}</span>
             <a
-              href={site.instagram}
+              href={instagram}
               target="_blank"
               rel="noreferrer"
               className="font-display text-2xl italic text-ink transition-colors hover:text-clay"
             >
-              {site.instagramHandle}
+              {instagramHandle}
             </a>
-            {site.email && (
-              <a href={`mailto:${site.email}`} className="text-ink-soft transition-colors hover:text-clay">
-                {site.email}
+            {email && (
+              <a href={`mailto:${email}`} className="text-ink-soft transition-colors hover:text-clay">
+                {email}
               </a>
             )}
 
             <div className="mt-2 h-px w-full bg-ink/10" />
-            <span className="eyebrow">Agencies</span>
+            <span className="eyebrow">{contact.agenciesLabel}</span>
             <ul className="flex flex-col gap-2">
               {agencies.map((a) => (
                 <li key={a.name} className="text-sm text-ink-soft">

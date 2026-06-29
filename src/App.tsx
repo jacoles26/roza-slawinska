@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -11,6 +11,7 @@ import Journal from "./pages/Journal";
 import Representation from "./pages/Representation";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { DEFAULT_LOCALE, isLocale } from "./i18n/locales";
 
 /** Reset scroll on every route change. */
 function ScrollToTop() {
@@ -21,14 +22,24 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+/**
+ * Everything under /:lang/*. Validates the locale segment (redirecting unknown
+ * languages to the default) and renders the chrome + animated page routes.
+ */
+function LocaleApp() {
+  const { lang } = useParams();
   const location = useLocation();
+
+  if (!isLocale(lang)) {
+    return <Navigate to={`/${DEFAULT_LOCALE}`} replace />;
+  }
+
   return (
     <>
       <Grain />
       <Nav />
-      <ScrollToTop />
       <AnimatePresence mode="wait">
+        {/* Nested routes resolve relative to /:lang */}
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -40,6 +51,19 @@ export default function App() {
         </Routes>
       </AnimatePresence>
       <Footer />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Navigate to={`/${DEFAULT_LOCALE}`} replace />} />
+        <Route path="/:lang/*" element={<LocaleApp />} />
+        <Route path="*" element={<Navigate to={`/${DEFAULT_LOCALE}`} replace />} />
+      </Routes>
     </>
   );
 }
