@@ -22,12 +22,10 @@ export const pl: SiteContent = {
 
   nav: [
     { label: "Start", to: "/" },
-    { label: "O mnie", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
     { label: "Dziennik", to: "/journal" },
-    { label: "Reprezentacja", to: "/representation" },
-    { label: "Kontakt", to: "/contact" },
   ],
+  inquireCta: "Zapytaj",
 
   hero: {
     portfolioLabel: "Portfolio",
@@ -142,11 +140,11 @@ export const pl: SiteContent = {
           "ważniejszy niż bycie nieomylną.",
       },
     ],
-    detailsTitle: "Szczegóły",
+    detailsTitle: "Castingi i bookingi",
     detailsIntro:
-      "Podstawowe informacje do castingów i bookingów. Po pełną kartę lub digitals napisz " +
-      "przez moją agencję albo stronę kontaktową.",
-    detailsButton: "Poproś o digitals",
+      "Po digitals, wymiary i pełną kartę zgłoś się przez moją agencję — mają wszystko, " +
+      "czego potrzebuje casting.",
+    detailsButton: "Napisz do agencji",
   },
 
   portfolio: {
@@ -335,18 +333,6 @@ export const pl: SiteContent = {
     "Daj mi wystarczająco dobry argument, a zmienię zdanie.",
     "Sukces to dla mnie nieustanny rozwój — napęd, który niesie mnie do przodu.",
     "Chcę, żeby moja praca pokazywała autentyczność — że można mierzyć wysoko i pozostać głęboko ludzkim.",
-  ],
-
-  stats: [
-    { label: "Baza", value: "Warszawa, PL" },
-    { label: "Wzrost", value: "—" },
-    { label: "Biust", value: "—" },
-    { label: "Talia", value: "—" },
-    { label: "Biodra", value: "—" },
-    { label: "Buty", value: "—" },
-    { label: "Włosy", value: "Blond" },
-    { label: "Oczy", value: "—" },
-    { label: "Języki", value: "polski · angielski · hiszpański" },
   ],
 
   seo: {

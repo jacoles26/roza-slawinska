@@ -35,7 +35,8 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { content, localePath } = useContent();
-  const { instagram, instagramHandle, name, nav } = content;
+  const { instagram, instagramHandle, name, nav, inquireCta } = content;
+  const inquireTo = `${localePath("/")}#contact`;
 
   // Solidify the pill after a little scroll
   useEffect(() => {
@@ -114,6 +115,12 @@ export default function Nav() {
             >
               {instagramHandle}
             </a>
+            <Link
+              to={inquireTo}
+              className="hidden rounded-full bg-clay px-5 py-2 text-sm font-medium text-cream transition-all duration-300 hover:bg-clay-soft active:scale-[0.98] md:inline-flex"
+            >
+              {inquireCta}
+            </Link>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -168,7 +175,13 @@ export default function Nav() {
                 </motion.div>
               ))}
             </nav>
-            <div className="mt-12 flex items-center gap-6">
+            <Link
+              to={inquireTo}
+              className="mt-10 inline-flex w-fit rounded-full bg-clay px-7 py-3 text-base font-medium text-cream active:scale-[0.98]"
+            >
+              {inquireCta}
+            </Link>
+            <div className="mt-10 flex items-center gap-6">
               <LanguageSwitcher />
               <a
                 href={instagram}

@@ -32,8 +32,8 @@ export default function SectionHeading({
           <span className="font-display text-sm italic text-clay">{index}</span>
         )}
         {eyebrow && (
-          <span className="eyebrow">
-            <span className="h-px w-8 bg-taupe-light" />
+          <span className="eyebrow text-clay">
+            <span className="h-px w-8 bg-clay" />
             {eyebrow}
           </span>
         )}

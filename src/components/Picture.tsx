@@ -6,6 +6,8 @@ interface PictureProps {
   className?: string;
   imgClassName?: string;
   loading?: "lazy" | "eager";
+  /** Set "high" on the LCP image (e.g. the lead portrait) so it loads first. */
+  fetchPriority?: "high" | "low" | "auto";
   sizes?: string;
 }
 
@@ -16,6 +18,7 @@ export default function Picture({
   className,
   imgClassName,
   loading = "lazy",
+  fetchPriority = "auto",
   sizes,
 }: PictureProps) {
   return (
@@ -25,6 +28,7 @@ export default function Picture({
         src={`/images/${slug}.jpg`}
         alt={alt}
         loading={loading}
+        fetchPriority={fetchPriority}
         decoding="async"
         sizes={sizes}
         className={cn("h-full w-full object-cover", imgClassName)}

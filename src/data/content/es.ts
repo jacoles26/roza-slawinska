@@ -22,12 +22,10 @@ export const es: SiteContent = {
 
   nav: [
     { label: "Inicio", to: "/" },
-    { label: "Sobre mí", to: "/about" },
     { label: "Portafolio", to: "/portfolio" },
     { label: "Diario", to: "/journal" },
-    { label: "Representación", to: "/representation" },
-    { label: "Contacto", to: "/contact" },
   ],
+  inquireCta: "Reservar",
 
   hero: {
     portfolioLabel: "Portafolio",
@@ -142,11 +140,11 @@ export const es: SiteContent = {
           "más que tener razón.",
       },
     ],
-    detailsTitle: "Los detalles",
+    detailsTitle: "Castings y trabajos",
     detailsIntro:
-      "Lo esencial para castings y trabajos. Para una ficha completa o digitals, contacta a " +
-      "través de mi agencia o de la página de contacto.",
-    detailsButton: "Solicitar digitals",
+      "Para digitals, medidas y una ficha completa, contacta a través de mi agencia — " +
+      "tienen todo lo que un casting necesita.",
+    detailsButton: "Contactar a mi agencia",
   },
 
   portfolio: {
@@ -336,18 +334,6 @@ export const es: SiteContent = {
     "Dame un argumento lo bastante bueno y cambiaré de opinión.",
     "Para mí, el éxito es el crecimiento continuo — el impulso que me lleva hacia adelante.",
     "Quiero que mi trabajo muestre autenticidad — que se puede apuntar alto y seguir siendo profundamente humana.",
-  ],
-
-  stats: [
-    { label: "Base", value: "Varsovia, PL" },
-    { label: "Altura", value: "—" },
-    { label: "Busto", value: "—" },
-    { label: "Cintura", value: "—" },
-    { label: "Cadera", value: "—" },
-    { label: "Calzado", value: "—" },
-    { label: "Cabello", value: "Rubio" },
-    { label: "Ojos", value: "—" },
-    { label: "Idiomas", value: "polaco · inglés · español" },
   ],
 
   seo: {
