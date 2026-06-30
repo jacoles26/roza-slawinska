@@ -28,11 +28,6 @@ export interface Partnership {
   role: string;
 }
 
-export interface Stat {
-  label: string;
-  value: string;
-}
-
 export interface ValueItem {
   title: string;
   body: string;
@@ -75,6 +70,8 @@ export interface SiteContent {
 
   // ── Navigation ──────────────────────────────────────────────
   nav: NavItem[];
+  /** Primary booking CTA label (sticky button in the nav). */
+  inquireCta: string;
 
   // ── Hero ────────────────────────────────────────────────────
   hero: {
@@ -219,9 +216,6 @@ export interface SiteContent {
 
   // ── Quotes (Róża's words) ───────────────────────────────────
   quotes: string[];
-
-  // ── Stats / model card ──────────────────────────────────────
-  stats: Stat[];
 
   // ── SEO ─────────────────────────────────────────────────────
   seo: {

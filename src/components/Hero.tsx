@@ -7,7 +7,8 @@ import { easeEditorial } from "../lib/motion";
 
 export default function Hero() {
   const { content, localePath } = useContent();
-  const { location, nameLines, keywords, hero } = content;
+  const { location, nameLines, keywords, hero, inquireCta } = content;
+  const inquireTo = `${localePath("/")}#contact`;
 
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -86,12 +87,9 @@ export default function Hero() {
                   <Arrow />
                 </span>
               </Link>
-              <Link
-                to={localePath("/about")}
-                className="btn-ghost border-cream/30 text-cream hover:border-cream/70"
-              >
-                {hero.theStory}
-                <span className="btn-island-icon bg-cream/10">
+              <Link to={inquireTo} className="btn-island bg-clay text-cream">
+                {inquireCta}
+                <span className="btn-island-icon bg-cream/15">
                   <Arrow />
                 </span>
               </Link>

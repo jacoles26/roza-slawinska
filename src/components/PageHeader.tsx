@@ -16,9 +16,9 @@ export default function PageHeader({ eyebrow, title, intro }: PageHeaderProps) {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: easeEditorial }}
-        className="eyebrow"
+        className="eyebrow text-clay"
       >
-        <span className="h-px w-8 bg-taupe-light" />
+        <span className="h-px w-8 bg-clay" />
         {eyebrow}
       </motion.span>
       <motion.h1

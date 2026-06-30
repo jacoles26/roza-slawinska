@@ -22,12 +22,10 @@ export const en: SiteContent = {
 
   nav: [
     { label: "Home", to: "/" },
-    { label: "About", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
     { label: "Journal", to: "/journal" },
-    { label: "Representation", to: "/representation" },
-    { label: "Contact", to: "/contact" },
   ],
+  inquireCta: "Inquire",
 
   hero: {
     portfolioLabel: "Portfolio",
@@ -140,11 +138,11 @@ export const en: SiteContent = {
           "Give me a good enough argument and I'll change my view. Growth beats being right.",
       },
     ],
-    detailsTitle: "The details",
+    detailsTitle: "Casting & bookings",
     detailsIntro:
-      "The essentials for casting and bookings. For a full set card or digitals, get in " +
-      "touch through my agency or the contact page.",
-    detailsButton: "Request digitals",
+      "For digitals, measurements and a full set card, please reach out through my agency — " +
+      "they'll have everything a casting needs.",
+    detailsButton: "Contact my agency",
   },
 
   portfolio: {
@@ -331,18 +329,6 @@ export const en: SiteContent = {
     "Give me a good enough argument and I'll change my mind.",
     "Success, to me, is continuous growth — it's the drive that carries me forward.",
     "I want my work to show authenticity — that you can aim high and still stay deeply human.",
-  ],
-
-  stats: [
-    { label: "Based in", value: "Warsaw, PL" },
-    { label: "Height", value: "—" },
-    { label: "Bust", value: "—" },
-    { label: "Waist", value: "—" },
-    { label: "Hips", value: "—" },
-    { label: "Shoes", value: "—" },
-    { label: "Hair", value: "Blonde" },
-    { label: "Eyes", value: "—" },
-    { label: "Languages", value: "Polish · English · Spanish" },
   ],
 
   seo: {
