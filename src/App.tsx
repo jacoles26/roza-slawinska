@@ -9,6 +9,7 @@ import Portfolio from "./pages/Portfolio";
 import Journal from "./pages/Journal";
 import NotFound from "./pages/NotFound";
 import { DEFAULT_LOCALE, isLocale } from "./i18n/locales";
+import { pathWithoutLocale } from "./i18n/useContent";
 
 /** Reset scroll on route change — but honour in-page #anchors. */
 function ScrollManager() {
@@ -51,8 +52,10 @@ function LocaleApp() {
       <Nav />
       <main id="main" tabIndex={-1}>
         <AnimatePresence mode="wait">
-          {/* Nested routes resolve relative to /:lang */}
-          <Routes location={location} key={location.pathname}>
+          {/* Key by the de-localized path so switching language does NOT remount the
+              page tree (the hero video keeps playing; the switch is instant). Real page
+              changes (Home→Portfolio) still change the key and animate. */}
+          <Routes location={location} key={pathWithoutLocale(location.pathname)}>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/journal" element={<Journal />} />

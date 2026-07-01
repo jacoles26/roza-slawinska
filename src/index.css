@@ -60,9 +60,23 @@
     @apply inline-flex items-center gap-2 text-[11px] uppercase tracking-label text-taupe font-medium;
   }
 
-  /* Thin red rule used under major section headings */
+  /* Thin rose rule used under major section headings */
   .rule-red {
     @apply h-px w-12 bg-clay;
+  }
+
+  /* Full-width editorial hairline (masthead-style section divider) */
+  .rule-hair {
+    @apply h-px w-full bg-ink/15;
+  }
+
+  /* Editorial drop cap — apply to a lead paragraph */
+  .dropcap::first-letter {
+    @apply float-left mr-3 font-display text-clay;
+    font-size: 3.6em;
+    line-height: 0.78;
+    padding-top: 0.06em;
+    font-style: italic;
   }
 
   /* Editorial container */

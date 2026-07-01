@@ -11,7 +11,7 @@ export const pl: SiteContent = {
   roles: ["Modelka", "Ekonomistka", "Sportsmenka"],
   tagline: "Dobre życie jest bliżej, niż większość z nas sądzi.",
   intro:
-    "Róża Sławińska — modelka, ekonomistka i sportsmenka z Warszawy. Łączy analityczny " +
+    "Róża Sławińska — modelka, ekonomistka i sportsmenka. Łączy analityczny " +
     "umysł absolwentki SGH z wyrazistym, high-fashionowym wizerunkiem, miłością do sportu " +
     "i rosnącą fascynacją sztuczną inteligencją. To, co robi dziś, jest dopiero początkiem " +
     "większej historii.",
@@ -49,7 +49,7 @@ export const pl: SiteContent = {
     shortTitle: "Modelka, ekonomistka, sportsmenka — i to dopiero początek.",
     shortButton: "Cała historia",
 
-    marquee: ["Niezależna", "Zdyscyplinowana", "Energiczna", "Warszawa", "Wiecznie w ruchu"],
+    marquee: ["Niezależna", "Zdyscyplinowana", "Energiczna", "Editorial", "Wiecznie w ruchu"],
 
     workEyebrow: "Wybrane prace",
     workTitle: "Portfolio w ruchu",
@@ -87,11 +87,11 @@ export const pl: SiteContent = {
     eyebrow: "O mnie",
     title: "Osoba za tą pracą",
     intro:
-      "Modelka, ekonomistka i sportsmenka z Warszawy — pewna siebie, ciekawa świata i " +
+      "Modelka, ekonomistka i sportsmenka — pewna siebie, ciekawa świata i " +
       "przekonana, że najlepsza część tej historii jest jeszcze przede mną.",
     lead:
-      "Jestem Róża — urodzona i wychowana w Warszawie, modelka od trzynastego roku życia, " +
-      "absolwentka ekonomii na SGH i sportsmenka, której najlepiej w ruchu.",
+      "Jestem Róża — modelka od trzynastego roku życia, absolwentka ekonomii na SGH " +
+      "i sportsmenka, której najlepiej w ruchu.",
     paragraphs: [
       "Zostałam odkryta na ulicy jako nastolatka, razem z siostrą, a pierwszy kontrakt z " +
         "agencją podpisałam po osiemnastce. Od tamtej pory współpracowałam z Model Plus w " +
@@ -313,7 +313,7 @@ export const pl: SiteContent = {
     exploreLabel: "Odkrywaj",
     representationLabel: "Reprezentacja",
     rights: "Wszelkie prawa zastrzeżone.",
-    locationTag: "Warszawa · W drodze",
+    locationTag: "W drodze",
   },
 
   notFound: {
@@ -339,19 +339,19 @@ export const pl: SiteContent = {
     default: {
       title: "Róża Sławińska — Modelka · Ekonomistka · Sportsmenka",
       description:
-        "Osobista strona Róży Sławińskiej — modelki, ekonomistki i sportsmenki z Warszawy. " +
-        "Modeling, sport, podróże, idee i życie oparte na ciągłym rozwoju.",
+        "Osobista strona Róży Sławińskiej — modelki, ekonomistki i sportsmenki. " +
+        "Modeling, sport, idee i życie oparte na ciągłym rozwoju.",
     },
     home: {
       title: "Róża Sławińska — Modelka · Ekonomistka · Sportsmenka",
       description:
-        "Modelka, ekonomistka i sportsmenka z Warszawy. Dobre życie jest bliżej, niż " +
+        "Modelka, ekonomistka i sportsmenka. Dobre życie jest bliżej, niż " +
         "myślisz — portfolio, dziennik i historia stojąca za pracą.",
     },
     about: {
       title: "O mnie",
       description:
-        "Róża Sławińska — modelka z Warszawy, absolwentka ekonomii na SGH i sportsmenka, " +
+        "Róża Sławińska — modelka, absolwentka ekonomii na SGH i sportsmenka, " +
         "budująca życie wokół dyscypliny, ciekawości i ciągłego rozwoju.",
     },
     portfolio: {

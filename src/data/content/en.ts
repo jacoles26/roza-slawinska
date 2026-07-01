@@ -11,7 +11,7 @@ export const en: SiteContent = {
   roles: ["Model", "Economist", "Athlete"],
   tagline: "A good life is closer than most of us think.",
   intro:
-    "Róża Sławińska — model, economist and athlete from Warsaw. She pairs the " +
+    "Róża Sławińska — model, economist and athlete. She pairs the " +
     "analytical mind of an SGH graduate with a striking high-fashion presence, a love " +
     "of sport, and a growing fascination with AI. What she's doing now is only the " +
     "beginning of a bigger story.",
@@ -49,7 +49,7 @@ export const en: SiteContent = {
     shortTitle: "Model, economist, athlete — and only getting started.",
     shortButton: "The full story",
 
-    marquee: ["Independent", "Disciplined", "Energetic", "Warsaw", "Always moving"],
+    marquee: ["Independent", "Disciplined", "Energetic", "Editorial", "Always moving"],
 
     workEyebrow: "Selected work",
     workTitle: "A portfolio in motion",
@@ -87,11 +87,11 @@ export const en: SiteContent = {
     eyebrow: "About",
     title: "The person behind the work",
     intro:
-      "Model, economist and athlete from Warsaw — confident, curious, and convinced the " +
+      "Model, economist and athlete — confident, curious, and convinced the " +
       "best part of the story is still ahead.",
     lead:
-      "I'm Róża — born and raised in Warsaw, a model since I was thirteen, an economics " +
-      "graduate of SGH, and an athlete who's happiest in motion.",
+      "I'm Róża — a model since I was thirteen, an economics graduate of SGH, and an " +
+      "athlete who's happiest in motion.",
     paragraphs: [
       "I was discovered on the street as a teenager, alongside my sister, and signed my " +
         "first agency contract after I turned eighteen. Since then I've worked with Model " +
@@ -309,7 +309,7 @@ export const en: SiteContent = {
     exploreLabel: "Explore",
     representationLabel: "Representation",
     rights: "All rights reserved.",
-    locationTag: "Warsaw · On the move",
+    locationTag: "On the move",
   },
 
   notFound: {
@@ -335,19 +335,19 @@ export const en: SiteContent = {
     default: {
       title: "Róża Sławińska — Model · Economist · Athlete",
       description:
-        "The personal site of Róża Sławińska — Warsaw-based model, economist and athlete. " +
-        "Modeling, sport, travel, ideas, and a life built around constant improvement.",
+        "The personal site of Róża Sławińska — model, economist and athlete. " +
+        "Modeling, sport, ideas, and a life built around constant improvement.",
     },
     home: {
       title: "Róża Sławińska — Model · Economist · Athlete",
       description:
-        "Model, economist and athlete from Warsaw. A good life is closer than most of us " +
+        "Model, economist and athlete. A good life is closer than most of us " +
         "think — portfolio, journal and the story behind the work.",
     },
     about: {
       title: "About",
       description:
-        "Róża Sławińska — Warsaw-born model, SGH economics graduate and athlete building a " +
+        "Róża Sławińska — model, SGH economics graduate and athlete building a " +
         "life around discipline, curiosity and constant improvement.",
     },
     portfolio: {

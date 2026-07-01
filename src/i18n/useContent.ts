@@ -4,7 +4,7 @@ import type { SiteContent } from "../data/content/types";
 import { DEFAULT_LOCALE, LOCALES, isLocale, type Locale } from "./locales";
 
 /** Strip the leading locale segment from a pathname, e.g. "/en/about" → "/about". */
-function pathWithoutLocale(pathname: string): string {
+export function pathWithoutLocale(pathname: string): string {
   const stripped = pathname.replace(new RegExp(`^/(${LOCALES.join("|")})(?=/|$)`), "");
   return stripped === "" ? "/" : stripped;
 }

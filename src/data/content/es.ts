@@ -11,7 +11,7 @@ export const es: SiteContent = {
   roles: ["Modelo", "Economista", "Deportista"],
   tagline: "Una buena vida está más cerca de lo que la mayoría cree.",
   intro:
-    "Róża Sławińska — modelo, economista y deportista de Varsovia. Une la mente analítica " +
+    "Róża Sławińska — modelo, economista y deportista. Une la mente analítica " +
     "de una graduada de la SGH con una presencia llamativa de alta moda, el amor por el " +
     "deporte y una creciente fascinación por la IA. Lo que hace hoy es solo el comienzo de " +
     "una historia más grande.",
@@ -49,7 +49,7 @@ export const es: SiteContent = {
     shortTitle: "Modelo, economista, deportista — y esto no ha hecho más que empezar.",
     shortButton: "La historia completa",
 
-    marquee: ["Independiente", "Disciplinada", "Enérgica", "Varsovia", "Siempre en movimiento"],
+    marquee: ["Independiente", "Disciplinada", "Enérgica", "Editorial", "Siempre en movimiento"],
 
     workEyebrow: "Trabajo seleccionado",
     workTitle: "Un portafolio en movimiento",
@@ -87,11 +87,11 @@ export const es: SiteContent = {
     eyebrow: "Sobre mí",
     title: "La persona detrás del trabajo",
     intro:
-      "Modelo, economista y deportista de Varsovia — segura, curiosa y convencida de que lo " +
+      "Modelo, economista y deportista — segura, curiosa y convencida de que lo " +
       "mejor de la historia está todavía por llegar.",
     lead:
-      "Soy Róża — nacida y criada en Varsovia, modelo desde los trece años, graduada en " +
-      "economía por la SGH y deportista que es más feliz en movimiento.",
+      "Soy Róża — modelo desde los trece años, graduada en economía por la SGH y " +
+      "deportista que es más feliz en movimiento.",
     paragraphs: [
       "Me descubrieron en la calle siendo adolescente, junto a mi hermana, y firmé mi primer " +
         "contrato con una agencia después de cumplir los dieciocho. Desde entonces he " +
@@ -314,7 +314,7 @@ export const es: SiteContent = {
     exploreLabel: "Explorar",
     representationLabel: "Representación",
     rights: "Todos los derechos reservados.",
-    locationTag: "Varsovia · En movimiento",
+    locationTag: "En movimiento",
   },
 
   notFound: {
@@ -340,19 +340,19 @@ export const es: SiteContent = {
     default: {
       title: "Róża Sławińska — Modelo · Economista · Deportista",
       description:
-        "El sitio personal de Róża Sławińska — modelo, economista y deportista de Varsovia. " +
-        "Modelaje, deporte, viajes, ideas y una vida construida sobre la mejora constante.",
+        "El sitio personal de Róża Sławińska — modelo, economista y deportista. " +
+        "Modelaje, deporte, ideas y una vida construida sobre la mejora constante.",
     },
     home: {
       title: "Róża Sławińska — Modelo · Economista · Deportista",
       description:
-        "Modelo, economista y deportista de Varsovia. Una buena vida está más cerca de lo " +
+        "Modelo, economista y deportista. Una buena vida está más cerca de lo " +
         "que crees — portafolio, diario y la historia detrás del trabajo.",
     },
     about: {
       title: "Sobre mí",
       description:
-        "Róża Sławińska — modelo de Varsovia, graduada en economía por la SGH y deportista, " +
+        "Róża Sławińska — modelo, graduada en economía por la SGH y deportista, " +
         "construyendo una vida en torno a la disciplina, la curiosidad y la mejora constante.",
     },
     portfolio: {
