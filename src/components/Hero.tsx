@@ -7,7 +7,7 @@ import { easeEditorial } from "../lib/motion";
 
 export default function Hero() {
   const { content, localePath } = useContent();
-  const { location, nameLines, keywords, hero, inquireCta } = content;
+  const { roles, nameLines, keywords, hero, inquireCta } = content;
   const inquireTo = `${localePath("/")}#contact`;
 
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +45,7 @@ export default function Hero() {
 
       {/* Top meta row */}
       <div className="container-editorial absolute inset-x-0 top-24 z-10 flex items-center justify-between text-cream/70 md:top-28">
-        <span className="eyebrow text-cream/70">{location}</span>
+        <span className="eyebrow text-cream/70">{roles.join(" · ")}</span>
         <span className="eyebrow text-cream/70">
           {hero.portfolioLabel} — {new Date().getFullYear()}
         </span>

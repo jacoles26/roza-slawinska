@@ -82,7 +82,13 @@ export default function Home() {
           </Reveal>
           {about.paragraphs.map((para, i) => (
             <Reveal key={i} delay={0.08 + i * 0.04}>
-              <p className="text-base leading-relaxed text-ink-soft md:text-lg">{para}</p>
+              <p
+                className={`text-base leading-relaxed text-ink-soft md:text-lg ${
+                  i === 0 ? "dropcap" : ""
+                }`}
+              >
+                {para}
+              </p>
             </Reveal>
           ))}
         </div>
@@ -122,10 +128,10 @@ export default function Home() {
         {/* Quotes */}
         <div className="mt-4 grid gap-px overflow-hidden rounded-squircle border border-ink/10 bg-ink/10 md:grid-cols-3">
           {beliefs.map((quote, i) => (
-            <Reveal key={i} delay={i * 0.08} className="bg-paper">
+            <Reveal key={i} delay={i * 0.08} className="bg-blush/40">
               <figure className="flex h-full flex-col gap-5 p-8 md:p-10">
-                <span className="font-display text-4xl italic leading-none text-clay">”</span>
-                <blockquote className="font-display text-xl leading-snug text-ink md:text-2xl">
+                <span className="font-display text-5xl italic leading-none text-clay">”</span>
+                <blockquote className="font-display text-2xl leading-snug text-ink md:text-[1.7rem]">
                   {quote}
                 </blockquote>
               </figure>

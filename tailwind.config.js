@@ -4,21 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Clarity palette — crisp near-white paper, deep ink, refined red primary,
-        // deep-blue secondary accent. (`clay` is kept as the accent token name so
-        // every existing accent picks up the new red automatically.)
-        paper: "#FAF8F4",
-        "paper-deep": "#F0EBE2",
+        // Warm-rose editorial palette — a play on "Róża" (rose). Warm rose-tinted ivory,
+        // deep warm ink, an inviting rose primary and a soft blush. (`clay` is kept as the
+        // accent token name so every existing accent picks up the new rose automatically.)
+        paper: "#FBF6F2",
+        "paper-deep": "#F1E7E2",
         cream: "#FFFFFF",
-        ink: "#17140F",
-        "ink-soft": "#3C362C",
-        taupe: "#857E70",
-        "taupe-light": "#B4AB9B",
-        clay: "#B11E2F", // refined red — primary accent
-        "clay-soft": "#D14B57",
-        azure: "#1F3D63", // deep blue — subtle secondary accent
-        "azure-soft": "#3E6B9E",
-        sage: "#7C8270",
+        ink: "#1A1410",
+        "ink-soft": "#41382F",
+        taupe: "#8C8175",
+        "taupe-light": "#C0B3AC",
+        clay: "#BC4B57", // inviting rose — primary accent
+        "clay-soft": "#C96270", // rose hover
+        blush: "#E7C9CB", // soft blush — warm fills / highlights
       },
       fontFamily: {
         display: ['"Fraunces Variable"', "Fraunces", "Georgia", "serif"],

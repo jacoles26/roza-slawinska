@@ -2,11 +2,11 @@
  * Supported locales for the trilingual site.
  * Polish is the default (root) language; visitors can switch to English or Spanish.
  */
-export const LOCALES = ["pl", "en", "es"] as const;
+export const LOCALES = ["en", "pl", "es"] as const;
 
 export type Locale = (typeof LOCALES)[number];
 
-export const DEFAULT_LOCALE: Locale = "pl";
+export const DEFAULT_LOCALE: Locale = "en";
 
 /** Short labels for the language switcher. */
 export const LOCALE_LABELS: Record<Locale, string> = {

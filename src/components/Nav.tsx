@@ -70,10 +70,15 @@ export default function Nav() {
         >
           <Link
             to={localePath("/")}
-            className="font-display text-lg italic tracking-tight text-ink"
+            className="font-display tracking-tight text-ink"
             aria-label={`${name} — home`}
           >
-            Róża<span className="text-clay">.</span>
+            <span className="text-lg italic sm:hidden">
+              Róża<span className="text-clay">.</span>
+            </span>
+            <span className="hidden text-base tracking-tight sm:inline md:text-lg">
+              Róża Sławińska<span className="text-clay">.</span>
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">

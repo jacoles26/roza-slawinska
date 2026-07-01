@@ -27,9 +27,12 @@ export default function SectionHeading({
         className
       )}
     >
-      <div className={cn("flex items-center gap-4", align === "center" && "justify-center")}>
+      {align === "left" && <span className="rule-hair" />}
+      <div className={cn("flex items-baseline gap-4", align === "center" && "justify-center")}>
         {index && (
-          <span className="font-display text-sm italic text-clay">{index}</span>
+          <span className="font-display text-2xl italic leading-none text-clay md:text-3xl">
+            {index}
+          </span>
         )}
         {eyebrow && (
           <span className="eyebrow text-clay">
